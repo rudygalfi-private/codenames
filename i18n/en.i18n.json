@@ -1,0 +1,32 @@
+{
+    "ui": {
+        "welcome to codenames": "Welcome to Codenames!",
+        "new game": "New Game",
+        "join game": "Join Game",
+        "waiting for viewers": "Waiting For Viewers...",
+        "access code": "Access code",
+        "join my codenames game": "Join my Codenames game!",
+        "start game": "Start Game",
+        "leave game": "Leave Game",
+        "pass": "Pass",
+        "show hide": "show/hide",
+        "you are the spy": "You are the spy!",
+        "you are not the spy": "You are <strong>not</strong> the spy!",
+        "the location": "The location",
+        "your role": "Your role",
+        "viewers": "Viewers",
+        "first": "1<span>st</span>",
+        "location reference": "Location Reference",
+        "end game": "End Game",
+        "enter your name": "Enter your name",
+        "create game": "Create",
+        "back": "Back",
+        "enter an access code": "Enter an access code",
+        "invalid access code": "Sorry, no game was found with the access code you provided!",
+        "join": "Join",
+        "footer": "This is a blank footer!",
+        "guesser": "Guesser",
+        "giver": "Giver",
+        "moderator": "Moderator"
+    }
+}
