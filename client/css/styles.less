@@ -29,7 +29,7 @@ body:after {
     background: url("img/bkgd-neutral.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-out;
 }
 
 #viewport.neutral {
@@ -147,13 +147,19 @@ a {
     text-align: center;
     margin-top: -15px;
 
-    color: #666;
+    color: #ffffff;
 }
 
 .access-code span {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
-    font-size: 1.2em;
-    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: #666666 0px 0px 10px,
+                 #666666 1px 1px 3px,
+                 #666666 -1px 1px 3px,
+                 #666666 1px -1px 3px,
+                 #666666 -1px -1px 3px;
+    color: white;
 }
 
 .access-buttons {
@@ -211,9 +217,12 @@ a {
 .lobby-viewer-list {
     margin-top: -15px;
     margin-bottom: -10px;
-    counter-reset:li; /* Initiate a counter */
-    margin-left:0; /* Remove the default left margin */
-    padding-left:0; /* Remove the default left padding */
+    counter-reset: li; /* Initiate a counter */
+    margin-left: 30%; /* Remove the default left margin */
+    padding-left: 0; /* Remove the default left padding */
+    margin-right: 30%;
+    padding-right: 0;
+    margin-bottom: 40px;
 }
 
 .lobby-viewer-list > li {
@@ -369,21 +378,27 @@ a {
     column-gap: 15px;
     width: 860px;
     display: block;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 
 .word-array li {
-    display: block;
+    display: inline-block;
     width: 160px;
     height: 102px;
-    margin: 0 0 15px 0;
-    padding: 57px 15px 15px 15px;
+    margin: 10px 0 0px 0;
+    padding-top: 57px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-    transition: all 0.25s cubic-bezier(.87,-.41,.19,1.44);
+    border-radius: 12px;
+    box-shadow: #222 0px 0px 10px;
+    transition: all 0.25s ease-in-out;
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     box-sizing:border-box;
@@ -399,76 +414,95 @@ a {
 
 .word-array li.unknown {
     background-image: url("img/word-man.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .word-array li.visible-red {
     background-image: url("img/revealed-spy-man-red.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    text-shadow: black 1px 1px 1px;
+    text-shadow: #6c150c 0px 0px 10px,
+                 #6c150c 1px 1px 3px,
+                 #6c150c -1px 1px 3px,
+                 #6c150c 1px -1px 3px,
+                 #6c150c -1px -1px 3px;
     padding: 75px 15px 5px 15px;
     font-size: 16px;
 }
 
 .word-array li.visible-blue {
     background-image: url("img/revealed-spy-woman-blue.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    text-shadow: black 1px 1px 1px;
+    text-shadow: #0b314c 0px 0px 10px,
+                 #0b314c 1px 1px 3px,
+                 #0b314c -1px 1px 3px,
+                 #0b314c 1px -1px 3px,
+                 #0b314c -1px -1px 3px;
     padding: 75px 15px 5px 15px;
     font-size: 16px;
 }
 
 .word-array li.visible-neutral {
-    background-image: url("http://placekitten.com/165/104");
-    background-size: contain;
+    background-image: url("http://placekitten.com/162/104");
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    text-shadow: black 1px 1px 1px;
+    text-shadow: #817967 0px 0px 10px,
+                 #817967 1px 1px 3px,
+                 #817967 -1px 1px 3px,
+                 #817967 1px -1px 3px,
+                 #817967 -1px -1px 3px;
     padding: 75px 15px 5px 15px;
     font-size: 16px;
 }
 
 .word-array li.visible-assassin {
     background-image: url("img/revealed-assassin.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    color: transparent;
+    color: white;
+    text-shadow: black 0px 0px 10px,
+                 black 1px 1px 3px,
+                 black -1px 1px 3px,
+                 black 1px -1px 3px,
+                 black -1px -1px 3px;
+    padding: 75px 15px 5px 15px;
+    font-size: 16px;
 }
 
 .word-array li.hidden-red {
     background-image: url("img/assignment-red.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding: 35px 15px 5px 15px;
+    padding: 37px 15px 5px 15px;
     color: white;
 }
 
 .word-array li.hidden-blue {
     background-image: url("img/assignment-blue.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding: 35px 15px 5px 15px;
+    padding: 37px 15px 5px 15px;
     color: white;
 }
 
 .word-array li.hidden-neutral {
     background-image: url("img/assignment-neutral.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding: 35px 15px 5px 15px;
+    padding: 37px 15px 5px 15px;
     color: white;
 }
 
 .word-array li.hidden-assassin {
     background-image: url("img/assignment-assassin.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding: 35px 15px 5px 15px;
+    padding: 37px 15px 5px 15px;
     color: white;
 }
 
