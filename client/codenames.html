@@ -3,7 +3,7 @@
   <title>Codenames</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,600" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,600" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600&subset=latin,vietnamese,latin-ext" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css" type="text/css">
@@ -30,7 +30,8 @@
 
 <template name="startMenu">
   <div class="main-menu">
-    <h4>{{_ "ui.welcome to codenames"}}</h4>
+    <div id="logo"></div>
+    <!--<h4>{{_ "ui.welcome to codenames"}}</h4>-->
 
     <div class="button-container">
       <button id="btn-new-game">{{_ "ui.new game"}}</button>
@@ -44,6 +45,7 @@
 </template>
 
 <template name="lobby">
+  <div id="logo"></div>
   <h4>{{_ "ui.waiting for viewers"}}</h4>
 
   <div class="access-code">
@@ -135,13 +137,10 @@
 </template>
 
 <template name="createGame">
-  <h4>
-    {{#if isLoading}}
-      <span class="spinner"></span>
-    {{else}}
-      {{_ "ui.welcome to codenames"}}
-    {{/if}}
-  </h4>
+  <div id="logo"></div>
+  {{#if isLoading}}
+    <h4><span class="spinner"></span></h4>
+  {{/if}}
 
   <form id="create-game">
     <div class="">
@@ -160,13 +159,10 @@
 </template>
 
 <template name="joinGame">
-  <h4>
-    {{#if isLoading}}
-      <span class="spinner"></span>
-    {{else}}
-      {{_ "ui.welcome to codenames"}}
-    {{/if}}
-  </h4>
+  <div id="logo"></div>
+  {{#if isLoading}}
+    <h4><span class="spinner"></span></h4>
+  {{/if}}
 
   <form id="join-game">
     <div>

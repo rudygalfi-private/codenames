@@ -366,6 +366,9 @@ function trackGameState() {
   if (game.state === "inProgress") {
     Session.set("currentView", "guesserGameView");
     Session.set("currentBkgd", game.turn);
+  } else if (game.state === "assassinVisible") {
+    Session.set("currentView", "guesserGameView");
+    Session.set("currentBkgd", "black");
   } else if (game.state === "waitingForViewers") {
     Session.set("currentView", "lobby");
     Session.set("currentBkgd", "neutral");
@@ -885,6 +888,7 @@ Template.guesserGameView.events({
     }
 
     var game = getCurrentGame();
+    var state = game.state;
     var words = game.words;
     var turn = game.turn;
     var wordIndex = -1;
@@ -906,14 +910,15 @@ Template.guesserGameView.events({
     }
 
     if (currentWordState == "hidden" && words[wordIndex]["assignment"] == "assassin") {
-      Session.set("currentBkgd", "black");
-    } else {
-      Session.set("currentBkgd", "turn");
+      state = "assassinVisible";
+    } else if (currentWordState == "visible" && words[wordIndex]["assignment"] == "assassin") {
+      state = "inProgress";
     }
 
     words[wordIndex]["state"] = (currentWordState == "visible") ? "hidden" : "visible";
 
     Games.update(game._id, {$set: {
+      state: state,
       words: words,
       turn: turn
     }});
