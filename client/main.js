@@ -240,7 +240,7 @@ function generateNewGame() {
   var game = {
     accessCode: generateAccessCode(),
     state: "waitingForViewers",
-    words: null,
+    words: null
   };
 
   var gameID = Games.insert(game);
