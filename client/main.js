@@ -829,6 +829,47 @@ function getTimeRemaining() {
 Template.guesserGameView.helpers({
   game: getCurrentGame,
   viewer: getCurrentViewer,
+  active: function() {
+    var game = getCurrentGame();
+    var turn = game.first;
+    return (turn == "blue") ? "blue" : "red";
+  },
+  activeToGo: function() {
+    var words = getCurrentGame().words;
+
+    var game = getCurrentGame();
+    var first = game.first;
+
+    var result = 0;
+    for (var i = 0; i < words.length; i++) {
+      if (words[i]["state"] == "hidden" && words[i]["assignment"] == first) {
+        result += 1;
+      }
+    }
+
+    return result;
+  },
+  inactive: function () {
+    var game = getCurrentGame();
+    var first = game.first;
+    return (first == "blue") ? "red" : "blue";
+  },
+  inactiveToGo: function() {
+    var words = getCurrentGame().words;
+
+    var game = getCurrentGame();
+    var first = game.first;
+    var lookup = (first == "blue") ? "red" : "blue";
+
+    var result = 0;
+    for (var i = 0; i < words.length; i++) {
+      if (words[i]["state"] == "hidden" && words[i]["assignment"] == lookup) {
+        result += 1;
+      }
+    }
+
+    return result;
+  },
   words: function() {
     var words = getCurrentGame().words;
     var showAllAssignments = getCurrentViewer().name != "guesser";

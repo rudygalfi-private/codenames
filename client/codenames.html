@@ -126,6 +126,17 @@
       {{/each}}
   </ul>
 
+  <div id="tracker">
+    <div id="active" class="{{active}}">
+      <div class="number">{{activeToGo}}</div>
+      <div class="descriptor">TO WIN</div>
+    </div>
+    <div id="inactive" class="{{inactive}}">
+      <div class="number">{{inactiveToGo}}</div>
+      <div class="descriptor">TO WIN</div>
+    </div>
+  </div>
+
   <div class="button-container">
     <button class="btn-pass">{{_ "ui.pass"}}</button>
   </div>
